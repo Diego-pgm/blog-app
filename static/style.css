@@ -126,7 +126,7 @@ img {
     display: block;
     text-align: center;
     font-size: 1.8rem;
-    color: var(--ora);   
+    color: var(--white);   
 }
 
 @media (min-width: 768px) {
@@ -194,3 +194,12 @@ img {
     box-sizing: border-box;
 }
 
+
+.footer {
+    background-color: black;
+}
+
+.footer h1,
+.footer .navigation__link{
+    color: var(--white);
+}
