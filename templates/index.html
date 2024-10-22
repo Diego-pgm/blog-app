@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="static/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="menu">
+            <a class="logo" href="/">
+                <h1 class="logo__name no-margin center-text"><span class="logo__bold">Anarchy</span>Blog!</h1>
+            </a>
+
+            <nav class="navigation">
+                <a href="/us" class="navigation__link">Us</a>
+                <a href="/wite" class="navigation__link">Write</a>
+                <a href="/contact" class="navigation__link">Contact</a>
+            </nav>
+        </div>
+        <div>
+            <h2 class="no-margin header__text">Anarchy Blog</h2>
+            <p class="no-margin header__par">write whatever you want. start a fckn revolution if you like</p>
+        </div>
+    </header>
+
+    <div class="container main-content">
+        <main class="blog">
+            <h3>Start writting the revolution you want</h3>
+            {% for post in posts %}
+            <article class="entry">
+                <div class="entry__content">
+                    <h4 class="no-margin">{{ post.name }}</h4>
+                    <p>{{ post.content }}</p>
+                    <a href="/post" class="button button--prim">Read Post</a>
+                </div>
+            </article>
+            {% endfor %}
+        </main>
+        <aside class="sidebar">
+            <h3>Write down something</h3>
+            <form class="postform" method="post">
+                <input type="text" id="name" name="name" placeholder="Title" required>
+                <textarea id="content" name="content" placeholder="Write your post" required></textarea>
+                <button class="button" type="submit">Submit</button>
+            </form>
+        </aside>
+    </div>
+</body>
+</html>
